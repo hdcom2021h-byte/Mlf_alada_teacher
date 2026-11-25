@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#fbe9f0">
+<title>ملف شواهد الأداء الوظيفي — هعغ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&amp;family=Tajawal:wght@400;500;700;800&amp;display=swap" rel="stylesheet">
+<!-- مكتبة رموز QR (إصدار مثبّت عبر HTTPS) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js" referrerpolicy="no-referrer"></script>
+<style>
+/* =========================================================
+   🎨 ألوان الباستيل — عدّلي القيم هنا لتغيير هوية الملف
+   ========================================================= */
+:root{
+  --rose:#d9779a; --rose-2:#c25f84; --rose-soft:#fbe4ec; --rose-line:#f2c9d7;
+  --ink:#4a3a44; --muted:#9a8791; --white:#fff;
+  --bg1:#fdf0f4; --bg2:#fbf7ef; --bg3:#f2eefb;
+  --ok:#3f9b74; --ok-bg:#ddf3e8; --mid:#b7832a; --mid-bg:#fdf1d6; --none:#b07a8f; --none-bg:#fbe7ee;
+  --radius:24px;
+  --shadow:0 2px 6px rgba(201,120,150,.08),0 12px 30px rgba(201,120,150,.10);
+}
+/* ألوان البطاقات بالتناوب: [خلفية، لون الطيّة العلوية] */
+.c0{--c:#fde4ec;--f:#f7c7d7}  /* وردي */
+.c1{--c:#ede6fb;--f:#d8cbf5}  /* بنفسجي فاتح */
+.c2{--c:#fdf3cf;--f:#f6e3a0}  /* أصفر هادئ */
+.c3{--c:#def5ea;--f:#bfe8d4}  /* نعناعي */
+.c4{--c:#ddeffb;--f:#bcdcf3}  /* سماوي */
+.c5{--c:#fde7da;--f:#f7cdb4}  /* خوخي */
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{overflow-x:hidden}
+body{margin:0;font-family:"Tajawal",system-ui,Tahoma,sans-serif;color:var(--ink);line-height:1.6;min-height:100vh;
+  background:radial-gradient(60% 40% at 90% 0%,#fadbe6 0%,transparent 70%),radial-gradient(50% 40% at 0% 30%,#ece4fb 0%,transparent 70%),radial-gradient(60% 40% at 100% 100%,#fdf0d2 0%,transparent 70%),linear-gradient(170deg,var(--bg1),var(--bg2) 50%,var(--bg3));
+  background-attachment:fixed;padding-bottom:env(safe-area-inset-bottom)}
+button,input,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+
+/* ============ الرأس ============ */
+.head{padding:34px 0 10px;text-align:center}
+.oval{position:relative;display:inline-block;padding:20px 54px 16px;border-radius:999px;background:linear-gradient(180deg,#fff,#fff8fb);
+  border:2px solid var(--rose-line);box-shadow:0 0 0 6px rgba(255,255,255,.7),0 0 0 7px var(--rose-line),var(--shadow);max-width:100%}
+.oval .bow{position:absolute;top:-24px;left:50%;transform:translateX(-50%);font-size:34px;filter:drop-shadow(0 3px 4px rgba(194,95,132,.25))}
+.oval h1{margin:0;font-family:"Aref Ruqaa","Tajawal",serif;font-size:clamp(1.9rem,6vw,3rem);line-height:1.25;color:#5b3f52}
+.oval p{margin:4px 0 0;color:var(--muted);font-size:.95rem}
+
+.info{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px auto 0;max-width:860px}
+.pill{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.85);border:1px solid var(--rose-line);border-radius:999px;padding:6px 6px 6px 16px;box-shadow:0 3px 10px rgba(201,120,150,.07)}
+.pill .lab{flex:none;background:linear-gradient(135deg,var(--rose),var(--rose-2));color:#fff;font-weight:700;font-size:.85rem;padding:6px 14px;border-radius:999px}
+.pill .val{flex:1;min-width:0;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill input{flex:1;min-width:0;border:0;background:transparent;font-weight:700;padding:6px 4px;outline:none}
+.pill input::placeholder{color:#cdb9c3;font-weight:500}
+.pill:focus-within{border-color:var(--rose);box-shadow:0 0 0 4px rgba(217,119,154,.15)}
+
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 6px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border-radius:999px;padding:11px 20px;font-weight:700;font-size:.95rem;cursor:pointer;border:1.5px solid var(--rose-line);background:#fff;transition:transform .18s,box-shadow .18s,background .18s;text-decoration:none;color:var(--ink);white-space:nowrap}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(201,120,150,.18)}
+.btn:active{transform:scale(.97)}
+.btn:focus-visible,.card:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(217,119,154,.4);outline-offset:2px}
+.btn-rose{background:linear-gradient(135deg,#ec95b3,var(--rose-2));border-color:transparent;color:#fff;box-shadow:0 6px 16px rgba(194,95,132,.25)}
+.btn-soft{background:var(--rose-soft);border-color:var(--rose-line);color:var(--rose-2)}
+.btn-sm{padding:7px 14px;font-size:.85rem}
+.btn-xs{padding:5px 11px;font-size:.8rem}
+.btn-danger{color:#c24a5a;border-color:#f3c6cc;background:#fff}
+.btn[disabled]{opacity:.5;pointer-events:none}
+
+.progress{max-width:520px;margin:14px auto 0;text-align:center}
+.progress .txt{font-size:.92rem;color:var(--muted)}
+.progress .txt b{color:var(--rose-2);font-size:1.1rem}
+.track{height:10px;border-radius:999px;background:#fff;border:1px solid var(--rose-line);overflow:hidden;margin-top:6px}
+.track span{display:block;height:100%;width:0;border-radius:inherit;background:linear-gradient(90deg,#f7c7d7,#d8cbf5,#bfe8d4);transition:width 1s cubic-bezier(.2,.8,.2,1)}
+
+.mode-note{max-width:860px;margin:16px auto 0;background:rgba(255,255,255,.75);border:1px dashed var(--rose);border-radius:18px;padding:10px 16px;font-size:.88rem;color:#7b5568;text-align:center}
+
+/* ============ البطاقات ============ */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:30px 0 20px}
+.card{position:relative;background:linear-gradient(180deg,#fff 0%,var(--c) 38%);border:1px solid rgba(255,255,255,.9);border-radius:var(--radius);
+  padding:72px 18px 18px;text-align:center;cursor:pointer;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;overflow:hidden;
+  animation:rise .5s both;animation-delay:calc(var(--i)*40ms)}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:70px;background:var(--f);clip-path:polygon(0 0,100% 0,100% 30%,50% 100%,0 30%);opacity:.9}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(80% 50% at 50% 0%,rgba(255,255,255,.7),transparent 60%);pointer-events:none}
+.card:hover{transform:translateY(-5px) rotate(-.3deg);box-shadow:0 4px 10px rgba(201,120,150,.10),0 20px 40px rgba(201,120,150,.18)}
+.card:active{transform:scale(.98)}
+.num{position:absolute;top:12px;right:14px;z-index:2;width:30px;height:30px;border-radius:50%;background:#fff;border:2px solid #6b5562;color:#5b3f52;font-weight:800;font-size:.85rem;display:grid;place-items:center}
+.stat{position:absolute;top:14px;left:14px;z-index:2;font-size:.75rem;font-weight:700;padding:3px 11px;border-radius:999px;background:#fff}
+.stat.none{color:var(--none)} .stat.progress{color:var(--mid);background:var(--mid-bg)} .stat.done{color:var(--ok);background:var(--ok-bg)}
+.emoji{position:absolute;top:26px;left:50%;transform:translateX(-50%);z-index:2;font-size:34px;line-height:1;filter:drop-shadow(0 4px 5px rgba(0,0,0,.08));transition:transform .3s}
+.card:hover .emoji{transform:translateX(-50%) scale(1.15) rotate(-6deg)}
+.name{position:relative;z-index:2;background:#fff;border-radius:999px;padding:11px 16px;font-weight:800;font-size:1.02rem;line-height:1.35;box-shadow:0 3px 10px rgba(0,0,0,.04);min-height:50px;display:flex;align-items:center;justify-content:center}
+.hint{position:relative;z-index:2;font-size:.8rem;color:var(--muted);margin-top:10px}
+.foot{position:relative;z-index:2;display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:8px}
+.tag{font-size:.78rem;background:rgba(255,255,255,.75);border-radius:999px;padding:3px 10px;display:inline-flex;gap:4px;align-items:center;text-decoration:none;color:var(--ink)}
+a.tag:hover{background:#fff}
+.card.add{background:rgba(255,255,255,.55);border:2px dashed var(--rose-line);box-shadow:none;padding:30px 18px;display:grid;place-items:center;color:var(--rose-2);font-weight:800;min-height:200px}
+.card.add::before,.card.add::after{display:none}
+.card.add .plus{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,#ec95b3,var(--rose-2));color:#fff;font-size:2rem;display:grid;place-items:center;margin:0 auto 8px;line-height:1}
+
+/* ===== الباركود في وضع العرض ===== */
+.cell{display:flex;flex-direction:column;min-width:0}
+.qr-pop{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1),margin .45s;margin-bottom:0}
+.qr-pop.open{grid-template-rows:1fr;margin-bottom:-14px}
+.qr-pop>.qi{overflow:hidden;display:flex;justify-content:center}
+.qr-card{position:relative;margin:4px auto 0;background:#fff;border-radius:20px;padding:10px 10px 22px;box-shadow:0 8px 22px rgba(201,120,150,.18);border:1px solid var(--rose-line);
+  text-align:center;cursor:pointer;transform:translateY(16px) scale(.92);opacity:0;transition:transform .45s cubic-bezier(.2,.8,.2,1),opacity .3s;font:inherit;color:inherit}
+.qr-pop.open .qr-card{transform:none;opacity:1}
+.qr-card:hover{box-shadow:0 12px 28px rgba(201,120,150,.28)}
+.qr-card{width:168px}
+.qr-card svg{width:136px;height:136px;display:block;border-radius:8px;margin:0 auto}
+.qr-card .cap{display:block;line-height:1.5;font-size:.72rem;font-weight:700;color:var(--rose-2);margin-top:6px}
+.qr-card.none{width:auto;padding:14px 16px 22px;cursor:pointer;color:var(--muted);font-size:.85rem;max-width:220px}
+.qr-card .pin{position:absolute;bottom:-9px;left:50%;transform:translateX(-50%);width:18px;height:18px;border-radius:50%;background:var(--rose);border:3px solid #fff;box-shadow:0 2px 5px rgba(0,0,0,.12)}
+.card .flower{position:absolute;top:50px;right:22px;z-index:2;font-size:15px;opacity:.85}
+.card.qr-on{box-shadow:0 0 0 3px rgba(217,119,154,.35),var(--shadow)}
+/* زخارف الرأس */
+.oval{border-color:#e6cf93;box-shadow:0 0 0 6px rgba(255,255,255,.75),0 0 0 7.5px #f2c9d7,var(--shadow)}
+.oval .fly{position:absolute;top:-30px;right:-6px;font-size:28px;animation:fly 4s ease-in-out infinite}
+.oval .blossom{position:absolute;top:-22px;left:-18px;font-size:30px;transform:rotate(-18deg)}
+.oval .sprig{position:absolute;top:50%;transform:translateY(-50%);font-size:20px;opacity:.75}
+.oval .sprig.r{right:16px}.oval .sprig.l{left:16px}
+.oval .book{display:block;font-size:20px;margin-top:2px}
+@keyframes fly{50%{transform:translate(-6px,-6px) rotate(8deg)}}
+@media (max-width:620px){.oval .sprig{display:none}.oval .blossom{left:-4px}.oval .fly{right:4px}.qr-card{width:156px}.qr-card svg{width:124px;height:124px}}
+#cloudStatus{position:fixed;left:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:90;background:#fff;border:1px solid var(--rose-line);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:700;box-shadow:var(--shadow);color:var(--muted)}
+#cloudStatus.saving{color:var(--mid)} #cloudStatus.saved{color:var(--ok)} #cloudStatus.error{color:#c24a5a;border-color:#f3c6cc}
+.empty-screen{max-width:520px;margin:30px auto;background:rgba(255,255,255,.85);border:1px solid var(--rose-line);border-radius:28px;padding:26px;text-align:center;box-shadow:var(--shadow)}
+.empty-screen .big{font-size:48px}
+.loading{text-align:center;color:var(--muted);padding:80px 0}
+@media print{#cloudStatus{display:none!important}}
+.page-foot{text-align:center;color:var(--muted);font-size:.82rem;padding:14px 0 36px}
+.ghost-edit{background:none;border:0;color:var(--muted);opacity:.45;font-size:.78rem;cursor:pointer;margin-top:8px;padding:4px 10px;border-radius:999px}
+.ghost-edit:hover{opacity:1;background:#fff}
+
+/* ============ النوافذ ============ */
+.overlay{position:fixed;inset:0;z-index:100;background:rgba(90,55,75,.28);backdrop-filter:blur(5px);display:grid;place-items:center;padding:14px;animation:fade .2s}
+@keyframes fade{from{opacity:0}}
+.modal{width:100%;max-width:640px;max-height:92vh;overflow:auto;background:#fffafc;border-radius:28px;box-shadow:0 30px 80px rgba(120,60,90,.25);animation:pop .28s cubic-bezier(.2,.8,.2,1)}
+.modal.sm{max-width:460px}
+@keyframes pop{from{transform:translateY(20px) scale(.97);opacity:0}}
+.m-head{position:relative;padding:22px 22px 18px;background:linear-gradient(180deg,var(--f,#f7c7d7),var(--c,#fde4ec));border-radius:28px 28px 0 0;display:flex;gap:14px;align-items:center}
+.m-head .big{font-size:40px;width:64px;height:64px;border-radius:20px;background:#fff;display:grid;place-items:center;flex:none;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.m-head h2{margin:0;font-size:1.2rem;line-height:1.35}
+.m-head .x{position:absolute;top:12px;left:12px;width:36px;height:36px;border-radius:50%;border:0;background:rgba(255,255,255,.85);cursor:pointer;font-size:1.1rem}
+.m-plain{padding:20px 22px 6px;font-weight:800;font-size:1.12rem}
+.m-body{padding:16px 22px 8px}
+.m-foot{padding:10px 22px 20px;display:flex;gap:8px;flex-wrap:wrap}
+.desc{color:#7b6672;font-size:.92rem;margin:0 0 14px;background:#fff;border-radius:16px;padding:10px 14px;border:1px solid #f4e3ea}
+.block{background:#fff;border:1px solid #f4e3ea;border-radius:20px;padding:14px;margin-bottom:12px}
+.block h3{margin:0 0 10px;font-size:1rem;display:flex;align-items:center;gap:8px}
+.block h3 .cnt{margin-inline-start:auto;font-size:.78rem;color:var(--muted);font-weight:500}
+.ev{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:14px;background:#fdf6f9;margin-bottom:6px}
+.ev .t{flex:1;min-width:0;font-weight:700;font-size:.9rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.empty{font-size:.85rem;color:var(--muted);text-align:center;padding:10px;border:1px dashed #f0d6e0;border-radius:14px;margin-bottom:6px}
+.addform{display:grid;grid-template-columns:1fr 1.3fr auto;gap:6px;margin-top:8px}
+.in{width:100%;border:1.5px solid #f0d6e0;background:#fff;border-radius:14px;padding:9px 12px;outline:none;transition:border-color .15s,box-shadow .15s}
+.in:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(217,119,154,.13)}
+.in[dir=ltr]{text-align:left;font-size:.82rem}
+.in.bad{border-color:#e9a0ad;background:#fff6f7}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.lbl{font-weight:700;font-size:.85rem;margin:0 0 6px;display:block}
+.switch{display:flex;align-items:center;gap:10px;cursor:pointer;font-weight:700;font-size:.9rem;background:#fff;border:1px solid #f4e3ea;border-radius:16px;padding:10px 14px}
+.switch input{width:20px;height:20px;accent-color:var(--rose-2)}
+.tip{background:#fff7e3;border:1px solid #f6e3a0;border-radius:16px;padding:10px 14px;font-size:.86rem;color:#7a5d17;margin-bottom:12px}
+.steps{padding-inline-start:20px;margin:6px 0 12px;font-size:.9rem}
+.steps li{margin-bottom:5px}
+.code{width:100%;height:150px;direction:ltr;text-align:left;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.75rem;border:1.5px solid #f0d6e0;border-radius:14px;padding:10px;background:#fff;resize:vertical}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%) translateY(20px);z-index:300;background:#5b3f52;color:#fff;padding:11px 20px;border-radius:999px;font-size:.92rem;opacity:0;pointer-events:none;transition:.25s;max-width:92vw;text-align:center;box-shadow:0 10px 30px rgba(90,55,75,.3)}
+#toast.show{opacity:1;transform:translateX(-50%)}
+#toast.ok{background:var(--ok)} #toast.err{background:#c24a5a}
+
+/* ============ التجاوب ============ */
+@media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr);gap:16px}}
+@media (max-width:620px){
+  .info{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .oval{padding:18px 26px 14px}
+  .btns .btn{flex:1 1 100%}
+  .addform{grid-template-columns:1fr}
+}
+@media (max-width:380px){.grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* ============ صفحة PDF التفاعلية (للطباعة فقط) ============ */
+#sheet{display:none}
+@media print{
+  @page{size:A4;margin:0}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff!important}
+  #app,#toast,.overlay{display:none!important}
+  #sheet{display:flex;flex-direction:column;width:210mm;height:297mm;overflow:hidden;background:linear-gradient(170deg,#fdf0f4,#fbf7ef 55%,#f2eefb)}
+}
+.sh-head{text-align:center;padding:9mm 10mm 4mm}
+.sh-oval{display:inline-block;position:relative;padding:4mm 14mm 3mm;border-radius:999px;background:#fff;border:.5mm solid var(--rose-line);box-shadow:0 0 0 1.5mm #fff,0 0 0 1.8mm var(--rose-line)}
+.sh-oval .bow{position:absolute;top:-6mm;left:50%;transform:translateX(-50%);font-size:18pt}
+.sh-oval h1{margin:0;font-family:"Aref Ruqaa","Tajawal",serif;font-size:24pt;color:#5b3f52;line-height:1.2}
+.sh-oval p{margin:0;font-size:8.5pt;color:var(--muted)}
+.sh-info{display:grid;grid-template-columns:1fr 1fr;gap:2mm;margin:4mm 8mm 0}
+.sh-info div{background:#fff;border:.3mm solid var(--rose-line);border-radius:99px;padding:1.2mm 1.5mm 1.2mm 4mm;font-size:9pt;font-weight:700;display:flex;gap:2mm;align-items:center}
+.sh-info b{background:var(--rose);color:#fff;border-radius:99px;padding:.6mm 3mm;font-size:8pt}
+.sh-prog{font-size:8.5pt;color:var(--muted);margin-top:2.5mm}
+.sh-grid{flex:1;min-height:0;display:grid;gap:3.5mm;padding:4mm 8mm 3mm}
+.sh-card{position:relative;min-height:0;background:linear-gradient(180deg,#fff,var(--c) 40%);border-radius:5mm;padding:11mm 2.5mm 2.5mm;text-align:center;display:flex;flex-direction:column;overflow:hidden;border:.3mm solid rgba(0,0,0,.04)}
+.sh-card::before{content:"";position:absolute;inset:0 0 auto 0;height:11mm;background:var(--f);clip-path:polygon(0 0,100% 0,100% 30%,50% 100%,0 30%)}
+.sh-card .n{position:absolute;top:2mm;right:2.5mm;width:5.5mm;height:5.5mm;border-radius:50%;background:#fff;border:.4mm solid #6b5562;font-size:7.5pt;font-weight:800;display:grid;place-items:center;z-index:1}
+.sh-card .st{position:absolute;top:2.2mm;left:2.5mm;font-size:6.5pt;font-weight:700;background:#fff;border-radius:99px;padding:.3mm 2mm;z-index:1}
+.sh-card .em{position:absolute;top:2.5mm;left:50%;transform:translateX(-50%);font-size:15pt;text-decoration:none;z-index:1}
+.sh-card .nm{display:block;background:#fff;border-radius:99px;padding:1.6mm 2mm;font-weight:800;font-size:9pt;line-height:1.25;text-decoration:none;color:var(--ink);position:relative}
+.sh-subs{display:grid;gap:1.2mm;margin-top:auto;padding-top:1.8mm}
+.sh-subs a,.sh-subs span{display:block;font-size:7.3pt;font-weight:700;padding:1mm;border-radius:99px;background:rgba(255,255,255,.85);text-decoration:none;color:#7b4f64}
+.sh-subs span{color:#bbb}
+.sh-guide{border:.4mm dashed var(--rose);border-radius:5mm;background:#fff;padding:3mm;font-size:7.5pt;color:#7b5568;display:flex;flex-direction:column;justify-content:center;gap:1mm}
+.sh-guide b{color:var(--rose-2);font-size:9pt}
+.sh-foot{text-align:center;font-size:7pt;color:var(--muted);padding:0 0 4mm}
+#sheet.compact .sh-card{padding-top:9mm}
+#sheet.compact .sh-card::before{height:9mm}
+#sheet.compact .em{font-size:12pt;top:1.8mm}
+#sheet.compact .nm{font-size:8pt;padding:1.2mm}
+#sheet.compact .sh-subs a,#sheet.compact .sh-subs span{font-size:6.6pt;padding:.6mm}
+</style>
+</head>
+<body>
+
+<div id="app"></div>
+<div id="sheet" aria-hidden="true"></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="cloudStatus" hidden=""></div>
+
+<!--
+  ⚠️ لا تعدّلي هذا السطر يدويًا: تُحفظ فيه بيانات «نسخة النشر» تلقائيًا
+  عند الضغط على «تنزيل نسخة النشر». القيمة null = لا توجد بيانات منشورة بعد.
+-->
+<script id="embedded-data" type="application/json">{"teacher":"هعغ","subject":"نت","school":"نتا","year":"","subtitle":"شواهد الأداء الوظيفي للمعلمة","passwordHash":"","savedAt":1795616956584,"items":[{"id":"6lso7i6","name":"أداء الواجبات الوظيفية","emoji":"📋","desc":"الالتزام بالدوام وأداء المهام المسندة وتطبيق الأنظمة والتعليمات.","folder":"https://claude.ai/chat/911d94e1-3d1d-4a6e-9fc1-d4f9becf1ef5","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"ayqrw89","name":"التفاعل مع المجتمع المهني","emoji":"👥","desc":"المشاركة في مجتمعات التعلم المهنية وتبادل الخبرات والزيارات مع الزميلات.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"5nkhabw","name":"التفاعل مع أولياء الأمور","emoji":"🤝","desc":"التواصل الفعّال مع أولياء الأمور وإشراكهم في تعلم بناتهم ومتابعتهن.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"add8tqq","name":"التنويع في استراتيجيات التدريس","emoji":"🧑‍🏫","desc":"استخدام استراتيجيات متنوعة تراعي الفروق الفردية وأنماط التعلم.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"ho5cmcg","name":"تحسين نتائج المتعلمين","emoji":"📈","desc":"خطط علاجية وإثرائية وبرامج لرفع مستوى التحصيل ومتابعة أثرها.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"vu47qho","name":"إعداد وتنفيذ خطة التعلم","emoji":"🗓️","desc":"إعداد خطة توزيع المنهج والدروس وتنفيذها وفق الأهداف والمعايير.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"oc3yomo","name":"توظيف تقنيات ووسائل التعلم المناسبة","emoji":"💻","desc":"توظيف التقنية والوسائل التعليمية والمنصات الرقمية في التدريس.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"wltmw07","name":"تهيئة البيئة التعليمية","emoji":"🏫","desc":"بيئة صفية آمنة ومحفزة ومنظمة تدعم التعلم والمشاركة.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"zeg87ru","name":"الإدارة الصفية","emoji":"🧭","desc":"ضبط الصف وإدارة الوقت وتعزيز السلوك الإيجابي.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"pr38pvg","name":"تحليل نتائج المتعلمين وتشخيص مستوياتهم","emoji":"🔍","desc":"الاختبارات التشخيصية وتحليل النتائج وبناء القرارات عليها.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]},{"id":"9xossj6","name":"تنوع أساليب التقويم","emoji":"🏅","desc":"استخدام أدوات تقويم متنوعة: ملاحظة، مشاريع، اختبارات، ملفات إنجاز.","folder":"","done":false,"custom":false,"subs":[{"name":"الشواهد والوثائق","folder":"","ev":[]},{"name":"التقارير وقياس الأثر","folder":"","ev":[]}]}]}</script>
+
+<script>
+(function () {
+'use strict';
+
+/* نسخة نظيفة من الصفحة لإنتاج «نسخة النشر» منها */
+const PRISTINE_HTML = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+
+/* نوع الصفحة (يُضبط تلقائيًا — لا حاجة لتعديله):
+   'admin' ← صفحة التعبئة الخاصة بكِ
+   'view'  ← ملف النشر (عرض فقط) الذي يُنزَّل من زر «نشر الملف» */
+const APP_MODE = 'view';
+const VIEW_ONLY = APP_MODE === 'view';
+const CLOUD = {};   // لا توجد قاعدة بيانات
+
+/* =====================================================================
+   ✏️ البنود الافتراضية — الاسم، الأيقونة، وشرح مختصر (يمكن تعديلها من الصفحة)
+   ===================================================================== */
+const DEFAULT_ITEMS = [
+  ['أداء الواجبات الوظيفية',                    '📋', 'الالتزام بالدوام وأداء المهام المسندة وتطبيق الأنظمة والتعليمات.'],
+  ['التفاعل مع المجتمع المهني',                 '👥', 'المشاركة في مجتمعات التعلم المهنية وتبادل الخبرات والزيارات مع الزميلات.'],
+  ['التفاعل مع أولياء الأمور',                  '🤝', 'التواصل الفعّال مع أولياء الأمور وإشراكهم في تعلم بناتهم ومتابعتهن.'],
+  ['التنويع في استراتيجيات التدريس',            '🧑‍🏫', 'استخدام استراتيجيات متنوعة تراعي الفروق الفردية وأنماط التعلم.'],
+  ['تحسين نتائج المتعلمين',                     '📈', 'خطط علاجية وإثرائية وبرامج لرفع مستوى التحصيل ومتابعة أثرها.'],
+  ['إعداد وتنفيذ خطة التعلم',                   '🗓️', 'إعداد خطة توزيع المنهج والدروس وتنفيذها وفق الأهداف والمعايير.'],
+  ['توظيف تقنيات ووسائل التعلم المناسبة',       '💻', 'توظيف التقنية والوسائل التعليمية والمنصات الرقمية في التدريس.'],
+  ['تهيئة البيئة التعليمية',                    '🏫', 'بيئة صفية آمنة ومحفزة ومنظمة تدعم التعلم والمشاركة.'],
+  ['الإدارة الصفية',                            '🧭', 'ضبط الصف وإدارة الوقت وتعزيز السلوك الإيجابي.'],
+  ['تحليل نتائج المتعلمين وتشخيص مستوياتهم',    '🔍', 'الاختبارات التشخيصية وتحليل النتائج وبناء القرارات عليها.'],
+  ['تنوع أساليب التقويم',                       '🏅', 'استخدام أدوات تقويم متنوعة: ملاحظة، مشاريع، اختبارات، ملفات إنجاز.']
+];
+const SUB_NAMES = ['الشواهد والوثائق', 'التقارير وقياس الأثر'];
+const SUB_EMOJI = ['📁', '📊'];
+const EXTRA_EMOJIS = ['🌷', '⭐', '🎨', '📚', '🌟', '💡', '🧩', '🎓', '🌸'];
+const MAX_ITEMS = 20, MAX_EV = 30;
+
+/* مفاتيح التخزين — مرتبطة بمسار الصفحة */
+const STORE_KEY  = 'pastel-portfolio:' + location.pathname;
+const EDITOR_KEY = STORE_KEY + ':editor';
+const LOCK_KEY   = STORE_KEY + ':lock';
+
+/* ------------------------- أدوات مساعدة ------------------------- */
+const $ = (s, r = document) => r.querySelector(s);
+const uid = () => Math.random().toString(36).slice(2, 9);
+const clone = o => JSON.parse(JSON.stringify(o));
+
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  if (props) for (const [k, v] of Object.entries(props)) {
+    if (v == null || v === false) continue;
+    if (k === 'class') n.className = v;
+    else if (k === 'text') n.textContent = v;
+    else if (k.startsWith('on') && typeof v === 'function') n.addEventListener(k.slice(2), v);
+    else n.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of kids.flat()) { if (c == null || c === false) continue; n.append(c.nodeType ? c : document.createTextNode(String(c))); }
+  return n;
+}
+
+/* تنظيف النصوص: إزالة الرموز التي قد تُستخدم لحقن أكواد + تحديد الطول */
+function cleanText(s, max = 120) {
+  return String(s == null ? '' : s).replace(/[<>`]/g, '').replace(/[\u0000-\u001F\u007F]/g, ' ').replace(/\s+/g, ' ').trim().slice(0, max);
+}
+/* الروابط: https فقط (يمنع javascript: وغيرها) */
+function cleanLink(u) {
+  u = String(u == null ? '' : u).trim();
+  if (!u) return '';
+  if (!/^[a-z][a-z0-9+.-]*:/i.test(u) && /^[\w-]+(\.[\w-]+)+\//.test(u)) u = 'https://' + u;
+  try { const x = new URL(u); return x.protocol === 'https:' ? x.href : ''; } catch (e) { return ''; }
+}
+const isDrive = u => /^https:\/\/(drive|docs)\.google\.com\//.test(u);
+const ss = { get: k => { try { return sessionStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { sessionStorage.setItem(k, v); } catch (e) {} }, del: k => { try { sessionStorage.removeItem(k); } catch (e) {} } };
+const ls = { get: k => { try { return localStorage.getItem(k); } catch (e) { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); return true; } catch (e) { return false; } }, del: k => { try { localStorage.removeItem(k); } catch (e) {} } };
+
+function cyrb53(s, seed = 0) {
+  let h1 = 0xdeadbeef ^ seed, h2 = 0x41c6ce57 ^ seed;
+  for (let i = 0, ch; i < s.length; i++) { ch = s.charCodeAt(i); h1 = Math.imul(h1 ^ ch, 2654435761); h2 = Math.imul(h2 ^ ch, 1597334677); }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507) ^ Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507) ^ Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return (4294967296 * (2097151 & h2) + (h1 >>> 0)).toString(16);
+}
+const hashPw = p => 'c53:' + cyrb53('pastel|' + p, 7) + cyrb53(p + '|portfolio', 13);
+const escapeHtml = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+
+/* ------------------------- نموذج البيانات ------------------------- */
+function newItem(name, emoji, desc, custom) {
+  return { id: uid(), name, emoji, desc, folder: '', done: false, custom: !!custom,
+    subs: SUB_NAMES.map(n => ({ name: n, folder: '', ev: [] })) };
+}
+function defaultData() {
+  return { teacher: '', subject: '', school: '', year: '', subtitle: 'شواهد الأداء الوظيفي للمعلمة',
+    passwordHash: '', savedAt: 0, items: DEFAULT_ITEMS.map(([n, e, d]) => newItem(n, e, d, false)) };
+}
+function normalize(raw) {
+  const d = defaultData();
+  if (!raw || typeof raw !== 'object') return d;
+  d.teacher = cleanText(raw.teacher, 80); d.subject = cleanText(raw.subject, 60);
+  d.school = cleanText(raw.school, 100); d.year = cleanText(raw.year, 30);
+  d.subtitle = cleanText(raw.subtitle, 100) || d.subtitle;
+  d.passwordHash = typeof raw.passwordHash === 'string' && /^c53:[0-9a-f]+$/.test(raw.passwordHash) ? raw.passwordHash : '';
+  d.savedAt = Number(raw.savedAt) || 0;
+  if (Array.isArray(raw.items) && raw.items.length) {
+    d.items = raw.items.slice(0, MAX_ITEMS).map((it, i) => {
+      it = it && typeof it === 'object' ? it : {};
+      const def = DEFAULT_ITEMS[i] || ['بند إضافي', '🌷', ''];
+      const x = newItem(cleanText(it.name, 90) || def[0], cleanText(it.emoji, 8) || def[1], cleanText(it.desc, 260), !!it.custom);
+      x.id = cleanText(it.id, 12) || x.id; x.folder = cleanLink(it.folder); x.done = !!it.done;
+      x.subs = SUB_NAMES.map((n, k) => {
+        const s = Array.isArray(it.subs) && it.subs[k] && typeof it.subs[k] === 'object' ? it.subs[k] : {};
+        return { name: n, folder: cleanLink(s.folder),
+          ev: (Array.isArray(s.ev) ? s.ev : []).slice(0, MAX_EV).map(e => ({ id: cleanText(e && e.id, 12) || uid(), title: cleanText(e && e.title, 90), url: cleanLink(e && e.url) })).filter(e => e.url) };
+      });
+      return x;
+    });
+  }
+  return d;
+}
+const evCount = it => it.subs[0].ev.length + it.subs[1].ev.length;
+function statusOf(it) {
+  if (it.done || (it.subs[0].ev.length && it.subs[1].ev.length)) return 'done';
+  if (evCount(it) || it.folder || it.subs.some(s => s.folder)) return 'progress';
+  return 'none';
+}
+const STATUS_TXT = { none: 'لم يُضف', progress: 'قيد الإكمال', done: 'مكتمل ✓' };
+const mainLink = it => it.folder || it.subs[0].folder || it.subs[1].folder || (it.subs[0].ev[0] || it.subs[1].ev[0] || {}).url || '';
+
+/* ------------------------- الحالة والتحميل ------------------------- */
+const state = { data: null, mode: 'view', source: 'none', embeddedAt: 0, qrOpen: new Set() };
+
+function readEmbedded() {
+  try { const t = $('#embedded-data').textContent.trim(); if (!t || t === 'null') return null; const o = JSON.parse(t); return o && typeof o === 'object' ? o : null; } catch (e) { return null; }
+}
+function readLocal() { try { const t = ls.get(STORE_KEY); return t ? JSON.parse(t) : null; } catch (e) { return null; } }
+
+function load() {
+  const emb = readEmbedded(), loc = readLocal();
+  state.embeddedAt = emb ? Number(emb.savedAt) || 0 : 0;
+  if (loc && (!emb || (Number(loc.savedAt) || 0) >= state.embeddedAt)) { state.data = normalize(loc); state.source = 'local'; }
+  else if (emb) { state.data = normalize(emb); state.source = 'embedded'; }
+  else { state.data = defaultData(); state.source = 'none'; }
+}
+/* ------------------------- السحابة (Supabase) ------------------------- */
+const urlSlug = (new URLSearchParams(location.search).get('p') || '').toLowerCase();
+const SLUG = /^[a-z0-9-]{3,60}$/.test(urlSlug) ? urlSlug : String(CLOUD.PORTFOLIO_SLUG || '').toLowerCase();
+const cloud = { on: false, sb: null, user: null, exists: false, ownerId: null };
+
+function initCloud() {
+  return false;   // الملف يعمل بدون قاعدة بيانات ولا حسابات
+  const url = String(CLOUD.SUPABASE_URL || '').trim(), key = String(CLOUD.SUPABASE_ANON_KEY || '').trim();
+  if (/PUT_/.test(url + key) || !/^https:\/\/[^\s/]+\/?$/.test(url) || key.length < 20) return false;
+  if (!/^[a-z0-9-]{3,60}$/.test(SLUG)) { toast('PORTFOLIO_SLUG غير صالح — استخدمي حروفًا إنجليزية صغيرة وأرقامًا و-', 'err'); return false; }
+  if (!window.supabase || typeof window.supabase.createClient !== 'function') { toast('تعذّر تحميل مكتبة Supabase — تحققي من الاتصال', 'err'); return false; }
+  cloud.sb = window.supabase.createClient(url, key, { auth: { persistSession: true, autoRefreshToken: true, storageKey: 'pastel-portfolio-auth' } });
+  cloud.on = true;
+  return true;
+}
+async function loadCloud() {
+  const { data: s } = await cloud.sb.auth.getSession();
+  cloud.user = s && s.session ? s.session.user : null;
+  const { data, error } = await cloud.sb.from('portfolios').select('data, owner_id, updated_at').eq('slug', SLUG).maybeSingle();
+  if (error) throw error;
+  if (data) {
+    cloud.exists = true; cloud.ownerId = data.owner_id;
+    state.data = normalize(data.data); state.source = 'cloud';
+    ls.set(STORE_KEY, JSON.stringify(state.data));                 // نسخة محلية احتياطية
+  } else { cloud.exists = false; cloud.ownerId = null; state.data = defaultData(); state.source = 'none'; }
+}
+const isOwner = () => !!(cloud.user && (!cloud.exists || cloud.ownerId === cloud.user.id));
+const isEditor = () => !VIEW_ONLY && (cloud.on ? isOwner() : ss.get(EDITOR_KEY) === '1');
+
+function setStatus(kind) {
+  const s = $('#cloudStatus'); if (!s) return;
+  const txt = { saving: '☁️ جارٍ الحفظ…', saved: '☁️ تم الحفظ في السحابة', error: '⚠️ لم يُحفظ — تحققي من الاتصال' };
+  s.hidden = !(cloud.on && state.mode === 'edit'); s.className = kind || ''; s.textContent = txt[kind] || '☁️ متصل';
+}
+let cloudTimer, cloudBusy = false, cloudAgain = false;
+function queueCloudSave() {
+  if (!cloud.on || !isOwner()) return;
+  setStatus('saving'); clearTimeout(cloudTimer); cloudTimer = setTimeout(saveCloud, 700);
+}
+async function saveCloud() {
+  if (cloudBusy) { cloudAgain = true; return; }
+  cloudBusy = true;
+  try {
+    const { error } = await cloud.sb.from('portfolios').upsert({ slug: SLUG, data: state.data }, { onConflict: 'slug' });
+    if (error) throw error;
+    cloud.exists = true; cloud.ownerId = cloud.user.id; setStatus('saved');
+  } catch (e) {
+    setStatus('error');
+    const m = String(e && (e.message || e.code) || '');
+    toast(/row-level|permission|42501/i.test(m) ? 'ليست لديكِ صلاحية تعديل هذا الملف' : 'تعذّر الحفظ في السحابة — سيُعاد المحاولة عند التعديل التالي', 'err');
+  } finally {
+    cloudBusy = false;
+    if (cloudAgain) { cloudAgain = false; saveCloud(); }
+  }
+}
+
+let saveTimer;
+function persist(msg) {
+  state.data.savedAt = Date.now(); state.source = 'local';
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    if (!ls.set(STORE_KEY, JSON.stringify(state.data)) && !cloud.on) toast('تعذّر الحفظ في المتصفح — صدّري نسخة احتياطية', 'err');
+  }, 250);
+  if (cloud.on) { state.source = 'cloud'; queueCloudSave(); }
+  if (msg) toast(msg, 'ok');
+}
+
+/* ------------------------- تنبيهات ونوافذ ------------------------- */
+let tTimer;
+function toast(msg, type) {
+  const t = $('#toast'); t.textContent = msg; t.className = 'show ' + (type || '');
+  clearTimeout(tTimer); tTimer = setTimeout(() => { t.className = ''; }, 2600);
+}
+let closeTop = null;
+function modal(opts) {
+  if (closeTop) closeTop();
+  const prev = document.activeElement;
+  const box = el('div', { class: 'modal ' + (opts.size || ''), style: opts.style || null });
+  const ov = el('div', { class: 'overlay', role: 'dialog', 'aria-modal': 'true', 'aria-label': opts.title || '' }, box);
+  const close = () => { ov.remove(); document.removeEventListener('keydown', onKey); closeTop = null; if (opts.onClose) opts.onClose(); if (prev && prev.focus) prev.focus(); };
+  const onKey = e => { if (e.key === 'Escape') close(); };
+  ov.addEventListener('click', e => { if (e.target === ov) close(); });
+  document.addEventListener('keydown', onKey);
+  opts.build(box, close);
+  document.body.append(ov); closeTop = close;
+  return close;
+}
+function confirmBox(title, text, okLabel, onOk) {
+  modal({ size: 'sm', title, build: (box, close) => {
+    box.append(el('div', { class: 'm-plain', text: title }), el('div', { class: 'm-body' }, el('p', { style: 'margin:0', text })),
+      el('div', { class: 'm-foot' },
+        el('button', { class: 'btn btn-sm btn-danger', type: 'button', onclick: () => { close(); onOk(); } }, okLabel),
+        el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إلغاء')));
+    setTimeout(() => box.querySelector('.btn').focus(), 30);
+  } });
+}
+async function copyText(t) {
+  try { await navigator.clipboard.writeText(t); return true; }
+  catch (e) { const ta = el('textarea', { style: 'position:fixed;top:0;opacity:0' }); ta.value = t; document.body.append(ta); ta.select(); let ok = false; try { ok = document.execCommand('copy'); } catch (_) {} ta.remove(); return ok; }
+}
+function download(name, text, type) {
+  const a = el('a', { href: URL.createObjectURL(new Blob([text], { type })), download: name });
+  document.body.append(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 2000);
+}
+const openLink = u => { if (u) window.open(u, '_blank', 'noopener'); };
+
+/* =====================================================================
+                               الواجهة الرئيسية
+   ===================================================================== */
+function render() {
+  const d = state.data, edit = state.mode === 'edit';
+  const app = $('#app'); app.replaceChildren();
+  document.title = 'ملف شواهد الأداء الوظيفي' + (d.teacher ? ' — ' + d.teacher : '');
+  const items = d.items, done = items.filter(it => statusOf(it) === 'done').length;
+
+  /* الحقول */
+  const field = (label, key, ph, max) => edit
+    ? el('label', { class: 'pill' }, el('span', { class: 'lab', text: label }),
+        el('input', { value: d[key], placeholder: ph, maxlength: String(max), 'aria-label': label,
+          oninput: e => { d[key] = cleanText(e.target.value, max); persist(); } }))
+    : el('div', { class: 'pill' }, el('span', { class: 'lab', text: label }), el('span', { class: 'val', text: d[key] || '—' }));
+
+  /* الأزرار */
+  const btns = el('div', { class: 'btns' });
+  if (edit) {
+    btns.append(
+      el('button', { class: 'btn btn-rose', type: 'button', onclick: () => { state.mode = 'view'; render(); scrollTo(0, 0); toast('هكذا سيظهر ملف النشر 👀'); } }, '👁️ معاينة صفحة العرض'),
+      el('button', { class: 'btn btn-rose', type: 'button', onclick: pdfDialog }, '📄 ملف PDF التفاعلي'),
+      el('button', { class: 'btn', type: 'button', onclick: driveDialog }, '⚙️ إنشاء مجلدات Google Drive تلقائيًا'),
+      el('button', { class: 'btn btn-rose', type: 'button', onclick: publishDialog }, '🚀 نشر الملف'));
+    if (cloud.on) btns.append(el('a', { class: 'btn', href: viewerUrl(), target: '_blank', rel: 'noopener' }, '🌐 فتح صفحة العرض المنشورة'));
+  } else {
+    if (isEditor()) btns.append(el('button', { class: 'btn btn-rose', type: 'button', onclick: () => { state.mode = 'edit'; render(); } }, '✏️ تعديل وإضافة الروابط'));
+    btns.append(el('button', { class: 'btn btn-rose', type: 'button', onclick: pdfDialog }, '📄 ملف PDF التفاعلي'));
+    btns.append(el('button', { class: 'btn', type: 'button', onclick: toggleAllQR }, '🔳 إظهار / إخفاء كل الباركودات'));
+    if (isEditor()) btns.append(el('button', { class: 'btn btn-soft', type: 'button', onclick: publishDialog }, '🌸 النشر'));
+  }
+
+  const bar = el('span');
+  app.append(el('header', { class: 'head wrap' },
+    el('div', { class: 'oval' }, el('span', { class: 'bow', 'aria-hidden': 'true', text: '🎀' }),
+      el('span', { class: 'fly', 'aria-hidden': 'true', text: '🦋' }), el('span', { class: 'blossom', 'aria-hidden': 'true', text: '🌸' }),
+      el('span', { class: 'sprig r', 'aria-hidden': 'true', text: '🌷' }), el('span', { class: 'sprig l', 'aria-hidden': 'true', text: '🌷' }),
+      el('h1', { text: 'ملف شواهد الأداء الوظيفي' }), el('p', { text: d.subtitle }), el('span', { class: 'book', 'aria-hidden': 'true', text: '📖' })),
+    el('div', { class: 'info' },
+      field('اسم المعلمة', 'teacher', 'اكتبي اسمك', 80), field('المدرسة', 'school', 'اسم المدرسة', 100),
+      field('المادة', 'subject', 'المادة', 60), field('العام الدراسي', 'year', 'مثال: 1447هـ', 30)),
+    btns,
+    el('div', { class: 'progress' },
+      el('div', { class: 'txt' }, 'اكتمل ', el('b', { text: String(done) }), ' من ' + items.length + ' بندًا'),
+      el('div', { class: 'track', role: 'progressbar', 'aria-valuemin': '0', 'aria-valuemax': String(items.length), 'aria-valuenow': String(done) }, bar)),
+    edit ? el('div', { class: 'mode-note', text: cloud.on
+        ? '✏️ صفحة التعديل الخاصة بكِ: اضغطي أي بطاقة لإضافة الشواهد. كل ما تحفظينه يظهر فورًا في صفحة العرض المنشورة.'
+        : '✏️ صفحة التعبئة: اضغطي أي بطاقة لإضافة الشواهد (تُحفظ تلقائيًا). عند الانتهاء اضغطي «🚀 نشر الملف».' }) : null));
+  requestAnimationFrame(() => requestAnimationFrame(() => { bar.style.width = (items.length ? done / items.length * 100 : 0) + '%'; }));
+
+  /* البطاقات */
+  const grid = el('main', { class: 'grid wrap', style: 'padding:0' });
+  items.forEach((it, i) => grid.append(cardEl(it, i)));
+  if (edit && items.length < MAX_ITEMS) grid.append(el('button', { class: 'card add', type: 'button', style: '--i:' + items.length, onclick: addItem },
+    el('div', null, el('div', { class: 'plus', text: '+' }), 'إضافة بند آخر')));
+  app.append(el('div', { class: 'wrap' }, grid));
+
+  /* التذييل */
+  const foot = el('footer', { class: 'page-foot' }, d.savedAt ? 'آخر تحديث: ' + fmtDate(d.savedAt) : '');
+  if (!edit && !isEditor() && !VIEW_ONLY) foot.append(el('div', null, el('button', { class: 'ghost-edit', type: 'button', onclick: requestEdit }, '✎ تعديل البيانات')));
+  if (!edit && isEditor()) foot.append(el('div', null, el('button', { class: 'ghost-edit', type: 'button', onclick: exitEditor }, cloud.on ? 'تسجيل الخروج' : 'الخروج من وضع التعديل')));
+  if (edit && cloud.on) foot.append(el('div', null, el('button', { class: 'ghost-edit', type: 'button', onclick: exitEditor }, 'تسجيل الخروج')));
+  app.append(foot);
+  if (cloud.on) setStatus(edit ? 'saved' : '');
+}
+
+function fmtDate(ts) {
+  try { return new Intl.DateTimeFormat('ar-SA-u-ca-gregory-nu-latn', { dateStyle: 'long' }).format(new Date(ts)); } catch (e) { return new Date(ts).toLocaleDateString(); }
+}
+
+/* توليد رمز QR بصيغة SVG (بدون إنترنت بعد تحميل المكتبة) */
+function qrSvg(url) {
+  if (!url || typeof window.qrcode !== 'function') return '';
+  try {
+    const q = window.qrcode(0, 'M'); q.addData(url); q.make();
+    const n = q.getModuleCount(), m = 2; let p = '';
+    for (let r = 0; r < n; r++) for (let c = 0; c < n; c++) if (q.isDark(r, c)) p += 'M' + c + ' ' + r + 'h1v1h-1z';
+    return '<svg viewBox="' + (-m) + ' ' + (-m) + ' ' + (n + 2 * m) + ' ' + (n + 2 * m) + '" shape-rendering="crispEdges" aria-hidden="true">' +
+      '<rect x="' + (-m) + '" y="' + (-m) + '" width="' + (n + 2 * m) + '" height="' + (n + 2 * m) + '" fill="#fff"/><path d="' + p + '" fill="#4a3a44"/></svg>';
+  } catch (e) { return ''; }
+}
+
+function cardEl(it, i) {
+  const edit = state.mode === 'edit', st = statusOf(it), link = it.folder;
+  const shown = !edit && state.qrOpen.has(it.id);
+  const hint = el('div', { class: 'hint', text: edit ? 'اضغطي لعرض التفاصيل' : (shown ? 'اضغطي الباركود للمعاينة والشواهد' : 'اضغطي لإظهار الباركود') });
+
+  const c = el('div', { class: 'card c' + (i % 6) + (shown ? ' qr-on' : ''), role: 'button', tabindex: '0', style: '--i:' + i,
+    'aria-label': it.name + ' — ' + STATUS_TXT[st], 'aria-expanded': edit ? null : String(shown),
+    onclick: e => { if (e.target.closest('a')) return; edit ? itemDialog(i) : toggleQR(it, cell, c, hint); },
+    onkeydown: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); edit ? itemDialog(i) : toggleQR(it, cell, c, hint); } } },
+    el('span', { class: 'num', text: String(i + 1) }),
+    el('span', { class: 'stat ' + st, text: STATUS_TXT[st] }),
+    el('span', { class: 'flower', 'aria-hidden': 'true', text: '🌸' }),
+    el('span', { class: 'emoji', 'aria-hidden': 'true', text: it.emoji }),
+    el('div', { class: 'name', text: it.name }),
+    hint,
+    el('div', { class: 'foot' },
+      el('span', { class: 'tag', text: '🧾 ' + evCount(it) + ' شاهد' }),
+      link ? el('a', { class: 'tag', href: link, target: '_blank', rel: 'noopener noreferrer' }, '📂 مجلد درايف') : null));
+
+  if (edit) return c;
+
+  /* الباركود: يظهر فوق البطاقة عند الضغط، والضغط عليه يفتح المعاينة والشواهد */
+  const url = mainLink(it), svg = qrSvg(url);
+  const qrBtn = el('button', { class: 'qr-card' + (svg ? '' : ' none'), type: 'button', tabindex: shown ? '0' : '-1',
+    'aria-label': 'معاينة شواهد: ' + it.name, onclick: () => itemDialog(i) });
+  if (svg) { qrBtn.innerHTML = svg; qrBtn.append(el('span', { class: 'cap' }, '👆 اضغطي للمعاينة', el('br'), '📱 امسحي لفتح المجلد')); }
+  else qrBtn.append(el('span', { text: url ? 'تعذّر إنشاء الباركود — اضغطي هنا لعرض الشواهد' : 'لم تُضف روابط لهذا البند بعد' }));
+  qrBtn.append(el('span', { class: 'pin', 'aria-hidden': 'true' }));
+  const cell = el('div', { class: 'cell' }, el('div', { class: 'qr-pop' + (shown ? ' open' : '') }, el('div', { class: 'qi' }, qrBtn)), c);
+  return cell;
+}
+
+function toggleQR(it, cell, card, hint, force) {
+  const open = force != null ? force : !state.qrOpen.has(it.id);
+  open ? state.qrOpen.add(it.id) : state.qrOpen.delete(it.id);
+  cell.querySelector('.qr-pop').classList.toggle('open', open);
+  card.classList.toggle('qr-on', open);
+  card.setAttribute('aria-expanded', String(open));
+  cell.querySelector('.qr-card').tabIndex = open ? 0 : -1;
+  hint.textContent = open ? 'اضغطي الباركود للمعاينة والشواهد' : 'اضغطي لإظهار الباركود';
+}
+function toggleAllQR() {
+  const items = state.data.items, openAll = items.some(it => !state.qrOpen.has(it.id));
+  document.querySelectorAll('.cell').forEach((cell, i) => {
+    const it = items[i]; if (it) toggleQR(it, cell, cell.querySelector('.card'), cell.querySelector('.hint'), openAll);
+  });
+}
+
+function addItem() {
+  const d = state.data; if (d.items.length >= MAX_ITEMS) return toast('الحد الأعلى ' + MAX_ITEMS + ' بندًا', 'err');
+  d.items.push(newItem('بند إضافي ' + (d.items.length + 1), EXTRA_EMOJIS[(d.items.length - DEFAULT_ITEMS.length) % EXTRA_EMOJIS.length] || '🌷', '', true));
+  persist('تمت إضافة بند جديد 🌷'); render(); itemDialog(d.items.length - 1);
+}
+
+/* =====================================================================
+                         نافذة البند (التفاصيل والشواهد)
+   ===================================================================== */
+function itemDialog(i) {
+  const it = state.data.items[i]; if (!it) return;
+  const edit = state.mode === 'edit';
+  const pal = getComputedStyle(document.documentElement);
+  const tmp = el('div', { class: 'c' + (i % 6) }); document.body.append(tmp);
+  const cs = getComputedStyle(tmp), C = cs.getPropertyValue('--c'), F = cs.getPropertyValue('--f'); tmp.remove();
+  void pal;
+
+  modal({ title: it.name, style: '--c:' + C + ';--f:' + F, onClose: render, build: (box, close) => {
+    const draw = () => {
+      box.replaceChildren();
+      const st = statusOf(it);
+      /* الرأس */
+      box.append(el('div', { class: 'm-head' },
+        el('div', { class: 'big', 'aria-hidden': 'true', text: it.emoji }),
+        el('div', { style: 'flex:1;min-width:0' },
+          el('div', { style: 'font-size:.8rem;color:#7b6672', text: 'البند ' + (i + 1) }),
+          edit ? el('input', { class: 'in', value: it.name, maxlength: '90', 'aria-label': 'اسم البند', style: 'font-weight:800;margin:2px 0 6px',
+                   onchange: e => { const v = cleanText(e.target.value, 90); if (!v) { e.target.value = it.name; return toast('اسم البند مطلوب', 'err'); } it.name = v; persist('تم حفظ اسم البند'); } })
+               : el('h2', { text: it.name }),
+          el('span', { class: 'stat ' + st, style: 'position:static;display:inline-block', text: STATUS_TXT[st] })),
+        el('button', { class: 'x', type: 'button', 'aria-label': 'إغلاق', onclick: close, text: '✕' })));
+
+      const body = el('div', { class: 'm-body' });
+      box.append(body);
+
+      /* الشرح */
+      if (edit) body.append(el('label', { class: 'lbl', text: 'شرح مختصر للبند' }),
+        el('textarea', { class: 'in', rows: '2', maxlength: '260', style: 'resize:vertical;margin-bottom:12px', onchange: e => { it.desc = cleanText(e.target.value, 260); persist('تم الحفظ'); } }, it.desc));
+      else if (it.desc) body.append(el('p', { class: 'desc', text: it.desc }));
+
+      /* مجلد البند */
+      const fb = el('div', { class: 'block' }, el('h3', null, '📂 مجلد البند في Google Drive'));
+      if (edit) fb.append(linkEditor(it.folder, v => { it.folder = v; persist(v ? 'تم حفظ رابط المجلد ✓' : 'تم حذف رابط المجلد'); draw(); }, 'رابط المجلد الرئيسي للبند'));
+      else fb.append(it.folder ? el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: () => openLink(it.folder) }, '📂 فتح مجلد البند')
+                               : el('div', { class: 'empty', text: 'لم يُضف رابط المجلد بعد' }));
+      body.append(fb);
+
+      /* الأقسام الفرعية */
+      it.subs.forEach((s, k) => body.append(subBlock(it, s, k, edit, draw)));
+
+      /* اكتمال يدوي + حذف */
+      if (edit) {
+        body.append(el('label', { class: 'switch' },
+          el('input', { type: 'checkbox', checked: it.done || null, onchange: e => { it.done = e.target.checked; persist(it.done ? 'تم تحديد البند مكتملًا ✓' : 'تم إلغاء التحديد'); draw(); } }),
+          'تحديد البند «مكتمل» يدويًا (إذا أضفتِ الملفات داخل مجلد درايف مباشرة)'));
+        body.append(el('p', { style: 'font-size:.8rem;color:var(--muted);margin:8px 2px 0', text: 'يكتمل البند تلقائيًا عند إضافة شاهد واحد على الأقل في كل قسم.' }));
+      }
+      const foot = el('div', { class: 'm-foot' }, el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إغلاق'));
+      if (edit && it.custom) foot.append(el('button', { class: 'btn btn-sm btn-danger', type: 'button', onclick: () =>
+        confirmBox('حذف البند؟', 'سيُحذف البند «' + it.name + '» وجميع روابطه. لا يمكن التراجع.', 'نعم، احذفي', () => {
+          state.data.items.splice(state.data.items.indexOf(it), 1); persist('تم حذف البند'); render(); }) }, '🗑️ حذف البند'));
+      box.append(foot);
+    };
+    draw();
+  } });
+}
+
+/* محرر رابط واحد (إضافة / تعديل / حذف) */
+function linkEditor(value, onSave, ph) {
+  const inp = el('input', { class: 'in', dir: 'ltr', type: 'url', inputmode: 'url', value: value || '', placeholder: 'https://drive.google.com/...', 'aria-label': ph });
+  const save = () => {
+    const raw = inp.value.trim();
+    if (!raw) return toast('الصقي الرابط أولًا', 'err');
+    const u = cleanLink(raw);
+    if (!u) { inp.classList.add('bad'); return toast(/^http:/i.test(raw) ? 'يجب أن يبدأ الرابط بـ https://' : 'الرابط غير صحيح', 'err'); }
+    if (!isDrive(u)) toast('تنبيه: الرابط ليس من Google Drive، تم حفظه', '');
+    onSave(u);
+  };
+  inp.addEventListener('input', () => inp.classList.remove('bad'));
+  inp.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); save(); } });
+  return el('div', { class: 'row' }, el('div', { style: 'flex:1;min-width:200px' }, inp),
+    el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: save }, value ? 'حفظ التعديل' : 'حفظ'),
+    value ? el('button', { class: 'btn btn-sm', type: 'button', onclick: () => openLink(value) }, 'فتح') : null,
+    value ? el('button', { class: 'btn btn-sm btn-danger', type: 'button', onclick: () => confirmBox('حذف الرابط؟', 'هل تريدين حذف هذا الرابط؟', 'حذف', () => onSave('')) }, 'حذف') : null);
+}
+
+function subBlock(it, s, k, edit, redraw) {
+  const b = el('div', { class: 'block' },
+    el('h3', null, SUB_EMOJI[k] + ' ' + s.name, el('span', { class: 'cnt', text: s.ev.length + ' شاهد' })));
+
+  /* مجلد القسم */
+  if (edit) {
+    b.append(el('details', { style: 'margin-bottom:10px', open: s.folder ? null : null },
+      el('summary', { style: 'cursor:pointer;font-size:.85rem;color:var(--rose-2);font-weight:700', text: s.folder ? '📂 مجلد هذا القسم: محفوظ ✓ (تعديل)' : '📂 إضافة رابط مجلد هذا القسم (اختياري)' }),
+      el('div', { style: 'margin-top:8px' }, linkEditor(s.folder, v => { s.folder = v; persist(v ? 'تم حفظ رابط مجلد القسم ✓' : 'تم حذف الرابط'); redraw(); }, 'رابط مجلد ' + s.name))));
+  } else if (s.folder) {
+    b.append(el('div', { style: 'margin-bottom:10px' }, el('button', { class: 'btn btn-soft btn-sm', type: 'button', onclick: () => openLink(s.folder) }, '📂 فتح مجلد «' + s.name + '»')));
+  }
+
+  /* الشواهد */
+  if (!s.ev.length) b.append(el('div', { class: 'empty', text: edit ? 'لا توجد شواهد بعد — أضيفي أول شاهد 👇' : 'لا توجد شواهد مضافة' }));
+  s.ev.forEach(ev => {
+    b.append(el('div', { class: 'ev' },
+      el('span', { 'aria-hidden': 'true', text: '🔗' }),
+      el('span', { class: 't', text: ev.title || 'شاهد' }),
+      el('button', { class: 'btn btn-xs btn-rose', type: 'button', onclick: () => openLink(ev.url) }, 'فتح الشاهد'),
+      edit ? el('button', { class: 'btn btn-xs', type: 'button', onclick: () => fillForm(ev) }, 'تعديل') : null,
+      edit ? el('button', { class: 'btn btn-xs btn-danger', type: 'button', 'aria-label': 'حذف', onclick: () =>
+        confirmBox('حذف الشاهد؟', 'هل تريدين حذف «' + (ev.title || 'شاهد') + '»؟', 'نعم، احذفي', () => {
+          s.ev = s.ev.filter(x => x !== ev); persist('تم حذف الشاهد'); redraw(); }) }, '🗑️') : null));
+  });
+
+  /* نموذج إضافة / تعديل شاهد */
+  let editing = null;
+  const tIn = el('input', { class: 'in', placeholder: 'عنوان الشاهد', maxlength: '90', 'aria-label': 'عنوان الشاهد' });
+  const uIn = el('input', { class: 'in', dir: 'ltr', type: 'url', inputmode: 'url', placeholder: 'رابط Google Drive', 'aria-label': 'رابط الشاهد' });
+  const addBtn = el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: submit }, '+ إضافة شاهد');
+  function fillForm(ev) { editing = ev; tIn.value = ev.title; uIn.value = ev.url; addBtn.textContent = 'حفظ التعديل'; tIn.focus(); }
+  function submit() {
+    const title = cleanText(tIn.value, 90), raw = uIn.value.trim(), url = cleanLink(raw);
+    if (!title) { tIn.classList.add('bad'); return toast('اكتبي عنوان الشاهد', 'err'); }
+    if (!url) { uIn.classList.add('bad'); return toast(raw ? (/^http:/i.test(raw) ? 'يجب أن يبدأ الرابط بـ https://' : 'الرابط غير صحيح') : 'الصقي رابط الشاهد', 'err'); }
+    if (editing) { editing.title = title; editing.url = url; persist('تم تعديل الشاهد ✓'); }
+    else { if (s.ev.length >= MAX_EV) return toast('الحد الأعلى ' + MAX_EV + ' شاهدًا لكل قسم', 'err'); s.ev.push({ id: uid(), title, url }); persist('تمت إضافة الشاهد 🌸'); }
+    redraw();
+  }
+  [tIn, uIn].forEach(x => { x.addEventListener('input', () => x.classList.remove('bad')); x.addEventListener('keydown', e => { if (e.key === 'Enter') { e.preventDefault(); submit(); } }); });
+  if (edit) b.append(el('div', { class: 'addform' }, tIn, uIn, addBtn));
+  return b;
+}
+
+/* =====================================================================
+                         الدخول لوضع التعديل
+   ===================================================================== */
+function getLock() { try { return JSON.parse(ls.get(LOCK_KEY)) || { n: 0, until: 0 }; } catch (e) { return { n: 0, until: 0 }; } }
+async function exitEditor() {
+  if (cloud.on) { try { await cloud.sb.auth.signOut(); } catch (e) {} cloud.user = null; }
+  ss.del(EDITOR_KEY); state.mode = 'view';
+  if (cloud.on && state.source === 'none') return renderEmpty();
+  render(); scrollTo(0, 0); toast('تم الخروج من وضع التعديل');
+}
+
+/* تسجيل الدخول بحساب Supabase (للمعلمة صاحبة الملف فقط) */
+function cloudLogin() {
+  const lock = getLock();
+  if (lock.until > Date.now()) return toast('تم إيقاف المحاولات مؤقتًا، حاولي بعد ' + Math.ceil((lock.until - Date.now()) / 60000) + ' دقيقة', 'err');
+  modal({ size: 'sm', title: 'تسجيل الدخول', build: (box, close) => {
+    const em = el('input', { class: 'in', type: 'email', dir: 'ltr', placeholder: 'البريد الإلكتروني', autocomplete: 'username', style: 'margin-bottom:8px' });
+    const pw = el('input', { class: 'in', type: 'password', dir: 'ltr', placeholder: 'كلمة المرور', autocomplete: 'current-password' });
+    const err = el('div', { style: 'color:#c24a5a;font-size:.82rem;min-height:1.2em;margin-top:6px' });
+    const btn = el('button', { class: 'btn btn-rose btn-sm', type: 'button' }, 'دخول');
+    const go = async () => {
+      const email = em.value.trim(), pass = pw.value;
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return (err.textContent = 'اكتبي بريدًا إلكترونيًا صحيحًا');
+      if (pass.length < 6) return (err.textContent = 'كلمة المرور 6 أحرف على الأقل');
+      btn.disabled = true; btn.textContent = 'جارٍ الدخول…'; err.textContent = '';
+      try {
+        const { data, error } = await cloud.sb.auth.signInWithPassword({ email, password: pass });
+        if (error) throw error;
+        cloud.user = data.user;
+        await loadCloud().catch(() => {});
+        if (!isOwner()) { await cloud.sb.auth.signOut(); cloud.user = null; err.textContent = 'هذا الحساب لا يملك صلاحية تعديل هذا الملف'; return; }
+        ls.del(LOCK_KEY); close();
+        state.mode = 'edit'; render(); scrollTo(0, 0);
+        toast(cloud.exists ? 'أهلًا بكِ 🌸 وضع الإعداد والتعبئة' : 'أهلًا 🌸 ابدئي بتعبئة الملف — سيُحفظ في السحابة تلقائيًا', 'ok');
+      } catch (e) {
+        const l = getLock(); l.n = (l.n || 0) + 1;
+        if (l.n >= 5) { l.until = Date.now() + 15 * 60000; l.n = 0; ls.set(LOCK_KEY, JSON.stringify(l)); close(); return toast('محاولات كثيرة — أُوقف الدخول 15 دقيقة', 'err'); }
+        ls.set(LOCK_KEY, JSON.stringify(l));
+        err.textContent = /invalid/i.test(String(e && e.message)) ? 'البريد أو كلمة المرور غير صحيحة' : 'تعذّر تسجيل الدخول — تحققي من الاتصال';
+      } finally { btn.disabled = false; btn.textContent = 'دخول'; }
+    };
+    btn.onclick = go;
+    pw.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+    box.append(el('div', { class: 'm-plain', text: '🔒 تسجيل الدخول للتعديل' }),
+      el('div', { class: 'm-body' }, el('p', { style: 'margin:0 0 10px;font-size:.85rem;color:var(--muted)', text: 'للمعلمة صاحبة الملف فقط. الزوار يستطيعون العرض بدون تسجيل.' }), em, pw, err),
+      el('div', { class: 'm-foot' }, btn, el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إلغاء')));
+    setTimeout(() => em.focus(), 30);
+  } });
+}
+
+function requestEdit() {
+  if (VIEW_ONLY) return;
+  ss.set(EDITOR_KEY, '1'); state.mode = 'edit'; render(); scrollTo(0, 0); return;
+  if (cloud.on) { if (isOwner()) { state.mode = 'edit'; render(); scrollTo(0, 0); return; } return cloudLogin(); }
+  const d = state.data;
+  const enter = () => { ss.set(EDITOR_KEY, '1'); state.mode = 'edit'; render(); scrollTo(0, 0); toast('وضع الإعداد والتعبئة ✏️'); };
+  if (!d.passwordHash) return enter();
+  const lock = getLock();
+  if (lock.until > Date.now()) return toast('تم إيقاف المحاولات مؤقتًا، حاولي بعد ' + Math.ceil((lock.until - Date.now()) / 60000) + ' دقيقة', 'err');
+  modal({ size: 'sm', title: 'الدخول للتعديل', build: (box, close) => {
+    const inp = el('input', { class: 'in', type: 'password', placeholder: 'كلمة مرور التعديل', autocomplete: 'current-password' });
+    const err = el('div', { style: 'color:#c24a5a;font-size:.82rem;min-height:1.2em;margin-top:6px' });
+    const go = () => {
+      if (hashPw(inp.value) === d.passwordHash) { ls.del(LOCK_KEY); close(); enter(); return; }
+      const l = getLock(); l.n = (l.n || 0) + 1;
+      if (l.n >= 5) { l.until = Date.now() + 15 * 60000; l.n = 0; ls.set(LOCK_KEY, JSON.stringify(l)); close(); return toast('محاولات كثيرة — أُوقف الدخول 15 دقيقة', 'err'); }
+      ls.set(LOCK_KEY, JSON.stringify(l)); err.textContent = 'كلمة المرور غير صحيحة (المتبقي ' + (5 - l.n) + ')'; inp.select();
+    };
+    inp.addEventListener('keydown', e => { if (e.key === 'Enter') go(); });
+    box.append(el('div', { class: 'm-plain', text: '🔒 الدخول لوضع التعديل' }), el('div', { class: 'm-body' }, inp, err),
+      el('div', { class: 'm-foot' }, el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: go }, 'دخول'), el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إلغاء')));
+    setTimeout(() => inp.focus(), 30);
+  } });
+}
+
+/* =====================================================================
+                         النشر والنسخ الاحتياطي
+   ===================================================================== */
+function buildPublishHtml() {
+  const json = JSON.stringify(Object.assign({}, state.data, { passwordHash: '' })).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+  let html = PRISTINE_HTML.replace(/(<script id="embedded-data" type="application\/json">)[\s\S]*?(<\/script>)/, (m, a, b) => a + json + b);
+  html = html.replace("const APP_MODE = 'admin';", "const APP_MODE = 'view';");   // نسخة النشر = عرض فقط
+  const title = 'ملف شواهد الأداء الوظيفي' + (state.data.teacher ? ' — ' + state.data.teacher : '');
+  return html.replace(/<title>[\s\S]*?<\/title>/, () => '<title>' + escapeHtml(title) + '</title>');
+}
+/* رابط صفحة العرض (index.html في نفس المجلد) */
+function viewerUrl() {
+  const u = new URL('./', location.href);
+  if (urlSlug) u.search = '?p=' + encodeURIComponent(SLUG);
+  return u.href;
+}
+const shareUrl = viewerUrl;
+function publishDialog() {
+  modal({ title: 'نشر الملف', build: (box, close) => {
+    const fileIn = el('input', { type: 'file', accept: 'application/json,.json', hidden: true, onchange: async e => {
+      const f = e.target.files[0]; if (!f) return;
+      try { const o = JSON.parse(await f.text()); if (!o || !Array.isArray(o.items)) throw 0; state.data = normalize(o); persist('تمت استعادة النسخة الاحتياطية ✓'); close(); render(); }
+      catch (_) { toast('ملف النسخة الاحتياطية غير صالح', 'err'); }
+    } });
+    box.append(el('div', { class: 'm-plain', text: '🚀 نشر الملف' }), el('div', { class: 'm-body' },
+      el('div', { class: 'block' },
+        el('button', { class: 'btn btn-rose', type: 'button', style: 'width:100%', onclick: () => { download('index.html', buildPublishHtml(), 'text/html;charset=utf-8'); toast('تم تنزيل ملف النشر index.html ✓', 'ok'); } }, '⬇️ تنزيل ملف النشر (index.html)'),
+        el('ol', { class: 'steps', style: 'margin-top:12px' },
+          el('li', { text: 'ارفعي الملف الذي نزل إلى مستودعكِ في GitHub (مكان index.html القديم).' }),
+          el('li', { text: 'يتحدث الرابط في Render تلقائيًا خلال دقيقة — أرسليه للجميع.' })),
+        el('p', { style: 'margin:0;font-size:.82rem;color:var(--muted)', text: 'ملف النشر للعرض فقط: لا يظهر فيه أي زر تعديل. عند إضافة شواهد جديدة كرّري التنزيل والرفع.' }),
+        el('button', { class: 'btn btn-sm', type: 'button', style: 'margin-top:10px', onclick: async () => toast((await copyText(buildPublishHtml())) ? 'تم نسخ كود ملف النشر ✓' : 'تعذّر النسخ', 'ok') }, '📋 أو انسخي الكود')),
+      el('div', { class: 'block' }, el('h3', null, '💾 نسخة احتياطية'),
+        el('div', { class: 'row' },
+          el('button', { class: 'btn btn-sm', type: 'button', onclick: () => { download('شواهد-الأداء-نسخة-احتياطية.json', JSON.stringify(state.data, null, 2), 'application/json'); toast('تم تصدير النسخة الاحتياطية ✓', 'ok'); } }, '⬇️ تصدير'),
+          el('button', { class: 'btn btn-sm', type: 'button', onclick: () => fileIn.click() }, '⬆️ استعادة'),
+          el('button', { class: 'btn btn-sm btn-danger', type: 'button', onclick: () => confirmBox('مسح كل البيانات؟', 'سيُمسح كل ما حُفظ على هذا الجهاز. ننصح بتصدير نسخة احتياطية أولًا.', 'نعم، امسحي', () => {
+            ls.del(STORE_KEY); state.data = defaultData(); state.source = 'none'; close(); render(); toast('تم مسح البيانات'); }) }, 'مسح البيانات')), fileIn)),
+      el('div', { class: 'm-foot' }, el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إغلاق')));
+  } });
+}
+
+function cloudPublishDialog() {
+  modal({ title: 'المشاركة', build: (box, close) => {
+    const fileIn = el('input', { type: 'file', accept: 'application/json,.json', hidden: true, onchange: async e => {
+      const f = e.target.files[0]; if (!f) return;
+      try { const o = JSON.parse(await f.text()); if (!o || !Array.isArray(o.items)) throw 0; state.data = normalize(o); persist('تمت استعادة النسخة وحفظها في السحابة ✓'); close(); render(); }
+      catch (_) { toast('ملف النسخة الاحتياطية غير صالح', 'err'); }
+    } });
+    const link = el('input', { class: 'in', dir: 'ltr', readonly: true, value: shareUrl() });
+    box.append(el('div', { class: 'm-plain', text: '🌸 المشاركة والنسخ الاحتياطي' }), el('div', { class: 'm-body' },
+      el('div', { class: 'tip', style: 'background:#ddf3e8;border-color:#bfe8d4;color:#2f6e53' }, '☁️ الملف محفوظ في قاعدة البيانات. أي تعديل تقومين به يظهر فورًا لكل من يفتح الرابط — بدون إعادة رفع.'),
+      el('div', { class: 'block' }, el('h3', null, '🔗 رابط صفحة العرض (أرسليه للجميع)'), link,
+        el('p', { style: 'margin:6px 0 0;font-size:.8rem;color:var(--muted)', text: 'هذا الرابط يفتح صفحة العرض فقط بدون أي أزرار تعديل. لا ترسلي رابط admin.html.' }),
+        el('div', { class: 'row', style: 'margin-top:8px' },
+          el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: async () => toast((await copyText(link.value)) ? 'تم نسخ الرابط ✓' : 'تعذّر النسخ', 'ok') }, '📋 نسخ الرابط'),
+          el('a', { class: 'btn btn-sm', href: 'https://wa.me/?text=' + encodeURIComponent('ملف شواهد الأداء الوظيفي' + (state.data.teacher ? ' — ' + state.data.teacher : '') + '\n' + link.value), target: '_blank', rel: 'noopener noreferrer' }, '💬 إرسال عبر واتساب'))),
+      el('div', { class: 'block' }, el('h3', null, '💾 النسخ الاحتياطي'),
+        el('div', { class: 'row' },
+          el('button', { class: 'btn btn-sm', type: 'button', onclick: () => { download('شواهد-الأداء-نسخة-احتياطية.json', JSON.stringify(state.data, null, 2), 'application/json'); toast('تم تصدير النسخة الاحتياطية ✓', 'ok'); } }, '⬇️ تصدير نسخة'),
+          el('button', { class: 'btn btn-sm', type: 'button', onclick: () => fileIn.click() }, '⬆️ استعادة نسخة')), fileIn),
+      el('div', { class: 'block' }, el('h3', null, '👤 الحساب'),
+        el('p', { style: 'margin:0 0 8px;font-size:.85rem;color:var(--muted)', text: 'مسجّلة باسم: ' + (cloud.user && cloud.user.email || '') }),
+        el('button', { class: 'btn btn-sm btn-danger', type: 'button', onclick: () => { close(); exitEditor(); } }, 'تسجيل الخروج'))),
+      el('div', { class: 'm-foot' }, el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إغلاق')));
+  } });
+}
+
+/* شاشة «لم يُنشأ الملف بعد» للزائر */
+function renderEmpty(loginScreen) {
+  const app = $('#app'); app.replaceChildren();
+  const admin = !VIEW_ONLY && cloud.on;
+  app.append(el('div', { class: 'wrap' }, el('header', { class: 'head' }, el('div', { class: 'oval' }, el('span', { class: 'bow', text: '🎀' }), el('h1', { text: 'ملف شواهد الأداء الوظيفي' }))),
+    el('div', { class: 'empty-screen' }, el('div', { class: 'big', text: admin ? '🔒' : '🌷' }),
+      el('h2', { style: 'margin:6px 0', text: admin ? (loginScreen ? 'صفحة التعديل' : 'لم يتم إعداد هذا الملف بعد') : 'لم يُنشر هذا الملف بعد' }),
+      el('p', { style: 'color:var(--muted);margin:0 0 16px', text: admin ? 'سجّلي الدخول بحسابكِ لتعديل الملف وإضافة الشواهد.' : 'سيظهر الملف هنا بعد أن تعبّئه المعلمة.' }),
+      admin ? el('button', { class: 'btn btn-rose', type: 'button', onclick: cloudLogin }, '🔒 تسجيل الدخول') : null)));
+  setStatus('');
+}
+
+/* =====================================================================
+                   إنشاء مجلدات Google Drive تلقائيًا (Apps Script)
+   ===================================================================== */
+function buildScript() {
+  const d = state.data;
+  const cfg = { root: 'ملف شواهد الأداء الوظيفي' + (d.teacher ? ' - ' + d.teacher : ''), subs: SUB_NAMES, items: d.items.map((it, i) => (i + 1) + ' - ' + it.name) };
+  return [
+    '/**',
+    ' * إنشاء مجلدات ملف شواهد الأداء الوظيفي في Google Drive',
+    ' * 1) اضغطي «تشغيل» على الدالة createPortfolioFolders',
+    ' * 2) وافقي على الأذونات',
+    ' * 3) انسخي السطر الذي يبدأ بـ { من «سجل التنفيذ» والصقيه في الملف التفاعلي',
+    ' */',
+    'const CONFIG = ' + JSON.stringify(cfg, null, 2) + ';',
+    '',
+    'function createPortfolioFolders() {',
+    '  const root = DriveApp.createFolder(CONFIG.root);',
+    '  const out = { root: root.getUrl(), items: [] };',
+    '  CONFIG.items.forEach(function (name) {',
+    '    const f = root.createFolder(name);',
+    '    const subs = CONFIG.subs.map(function (s) { return f.createFolder(s).getUrl(); });',
+    '    out.items.push({ folder: f.getUrl(), subs: subs });',
+    '  });',
+    '  try { root.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW); }',
+    '  catch (e) { Logger.log("تنبيه: لم يُسمح بتغيير المشاركة تلقائيًا، غيّريها يدويًا من درايف."); }',
+    '  Logger.log(JSON.stringify(out));',
+    '}'
+  ].join('\n');
+}
+function driveDialog() {
+  modal({ title: 'إنشاء مجلدات Google Drive', build: (box, close) => {
+    const code = el('textarea', { class: 'code', readonly: true }); code.value = buildScript();
+    const res = el('textarea', { class: 'code', style: 'height:90px', placeholder: '{"root":"https://drive.google.com/...","items":[...]}' });
+    const apply = () => {
+      let o; try { o = JSON.parse(res.value.trim().replace(/^[^{]*/, '')); } catch (e) { return toast('النص غير صحيح — انسخي السطر الذي يبدأ بـ {', 'err'); }
+      if (!o || !Array.isArray(o.items)) return toast('النتيجة لا تحتوي على روابط البنود', 'err');
+      let n = 0;
+      o.items.forEach((x, i) => {
+        const it = state.data.items[i]; if (!it || !x) return;
+        const f = cleanLink(x.folder); if (f) { it.folder = f; n++; }
+        (Array.isArray(x.subs) ? x.subs : []).forEach((u, k) => { if (it.subs[k]) { const c = cleanLink(u); if (c) it.subs[k].folder = c; } });
+      });
+      if (!n) return toast('لم يُعثر على روابط صالحة', 'err');
+      persist('تمت تعبئة روابط ' + n + ' بنود تلقائيًا 🎉'); close(); render();
+    };
+    box.append(el('div', { class: 'm-plain', text: '⚙️ إنشاء مجلدات Google Drive تلقائيًا' }), el('div', { class: 'm-body' },
+      el('p', { style: 'margin:0 0 8px;font-size:.9rem', text: 'سينشئ السكربت مجلدًا رئيسيًا باسم المعلمة، وداخله مجلد لكل بند، وفي كل بند مجلدان: «' + SUB_NAMES[0] + '» و«' + SUB_NAMES[1] + '». ثم تُعبّأ الروابط هنا تلقائيًا.' }),
+      el('ol', { class: 'steps' },
+        el('li', null, 'افتحي ', el('a', { href: 'https://script.google.com/home/projects/create', target: '_blank', rel: 'noopener noreferrer', style: 'color:var(--rose-2);font-weight:700' }, 'script.google.com'), ' ← «مشروع جديد».'),
+        el('li', { text: 'احذفي الكود الموجود والصقي الكود أدناه، ثم اضغطي حفظ 💾.' }),
+        el('li', { text: 'اضغطي «تشغيل ▶» ووافقي على الأذونات.' }),
+        el('li', { text: 'من «سجل التنفيذ» انسخي السطر الذي يبدأ بـ { والصقيه في المربع الأخير.' })),
+      code,
+      el('div', { class: 'row', style: 'margin:8px 0 14px' }, el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: async () => toast((await copyText(code.value)) ? 'تم نسخ السكربت ✓' : 'تعذّر النسخ', 'ok') }, '📋 نسخ السكربت')),
+      el('label', { class: 'lbl', text: 'الصقي نتيجة السكربت هنا:' }), res),
+      el('div', { class: 'm-foot' }, el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: apply }, '✨ تعبئة الروابط تلقائيًا'), el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إغلاق')));
+  } });
+}
+
+/* =====================================================================
+                         ملف PDF التفاعلي (صفحة A4 واحدة)
+   ===================================================================== */
+function buildSheet() {
+  const d = state.data, sh = $('#sheet'); sh.replaceChildren();
+  const cells = d.items.length + 1, cols = cells <= 15 ? 3 : 4, rows = Math.ceil(cells / cols);
+  sh.classList.toggle('compact', rows > 4);
+  const done = d.items.filter(it => statusOf(it) === 'done').length;
+  const a = (u, cls, kids) => u ? el('a', { class: cls, href: u, target: '_blank', rel: 'noopener' }, kids) : el('span', { class: cls }, kids);
+
+  sh.append(el('div', { class: 'sh-head' },
+    el('div', { class: 'sh-oval' }, el('span', { class: 'bow', text: '🎀' }), el('h1', { text: 'ملف شواهد الأداء الوظيفي' }), el('p', { text: d.subtitle })),
+    el('div', { class: 'sh-info' },
+      el('div', null, el('b', { text: 'اسم المعلمة' }), d.teacher || '—'), el('div', null, el('b', { text: 'المدرسة' }), d.school || '—'),
+      el('div', null, el('b', { text: 'المادة' }), d.subject || '—'), el('div', null, el('b', { text: 'العام الدراسي' }), d.year || '—')),
+    el('div', { class: 'sh-prog', text: 'اكتمل ' + done + ' من ' + d.items.length + ' بندًا' })));
+
+  const g = el('div', { class: 'sh-grid', style: 'grid-template-columns:repeat(' + cols + ',1fr);grid-template-rows:repeat(' + rows + ',minmax(0,1fr))' });
+  d.items.forEach((it, i) => {
+    const m = mainLink(it), st = statusOf(it);
+    const subLink = s => s.folder || (s.ev[0] && s.ev[0].url) || '';
+    g.append(el('div', { class: 'sh-card c' + (i % 6) },
+      el('span', { class: 'n', text: String(i + 1) }),
+      el('span', { class: 'st', text: STATUS_TXT[st] }),
+      a(m, 'em', it.emoji),
+      a(m, 'nm', it.name),
+      el('div', { class: 'sh-subs' }, it.subs.map((s, k) => a(subLink(s), '', SUB_EMOJI[k] + ' ' + s.name + (s.ev.length ? ' (' + s.ev.length + ')' : ''))))));
+  });
+  g.append(el('div', { class: 'sh-guide' }, el('b', { text: '🌸 طريقة الاستخدام' }),
+    el('div', { text: '• اضغطي على أيقونة البند أو اسمه لفتح مجلده في Google Drive.' }),
+    el('div', { text: '• اضغطي «' + SUB_NAMES[0] + '» أو «' + SUB_NAMES[1] + '» لفتح القسم مباشرة.' })));
+  sh.append(g, el('div', { class: 'sh-foot', text: [d.school, d.year].filter(Boolean).join(' • ') }));
+}
+function pdfDialog() {
+  modal({ size: 'sm', title: 'ملف PDF التفاعلي', build: (box, close) => {
+    box.append(el('div', { class: 'm-plain', text: '📄 ملف PDF التفاعلي' }), el('div', { class: 'm-body' },
+      el('ol', { class: 'steps' },
+        el('li', { text: 'ستفتح نافذة الطباعة بصفحة A4 واحدة فيها جميع البنود.' }),
+        el('li', { text: 'اختاري «حفظ بتنسيق PDF» من خيار الطابعة.' }),
+        el('li', { text: 'في ملف PDF: الضغط على أيقونة البند يفتح مجلده في Google Drive.' })),
+      el('div', { class: 'tip', text: 'للحصول على روابط قابلة للضغط داخل PDF استخدمي متصفح Google Chrome على الكمبيوتر.' })),
+      el('div', { class: 'm-foot' },
+        el('button', { class: 'btn btn-rose btn-sm', type: 'button', onclick: () => { close(); buildSheet(); setTimeout(() => window.print(), 300); } }, '🖨️ متابعة'),
+        el('button', { class: 'btn btn-sm', type: 'button', onclick: close }, 'إلغاء')));
+  } });
+}
+window.addEventListener('beforeprint', buildSheet);
+
+/* ------------------------- التشغيل ------------------------- */
+const wantsEdit = /(^|[?&])edit(=|&|$)/.test(location.search.slice(1));
+
+async function bootCloud() {
+  $('#app').replaceChildren(el('div', { class: 'loading' }, '🌸 جارٍ تحميل الملف…'));
+  try { await loadCloud(); }
+  catch (e) {
+    const cached = readLocal();
+    state.data = cached ? normalize(cached) : defaultData(); state.source = cached ? 'cache' : 'none';
+    toast(cached ? 'تعذّر الاتصال بقاعدة البيانات — تُعرض آخر نسخة محفوظة' : 'تعذّر الاتصال بقاعدة البيانات', 'err');
+    if (!cached) return renderEmpty();
+  }
+  if (VIEW_ONLY) { state.mode = 'view'; return state.source === 'none' ? renderEmpty() : render(); }   // صفحة العرض: قراءة فقط
+  cloud.sb.auth.onAuthStateChange((_ev, session) => { cloud.user = session ? session.user : null; });
+  /* صفحة التعديل: تفتح مباشرة على التعديل إذا كانت المعلمة مسجّلة، وإلا شاشة الدخول */
+  if (isOwner()) { state.mode = 'edit'; render(); if (state.source === 'none') toast('أهلًا 🌸 ابدئي بتعبئة الملف', 'ok'); return; }
+  renderEmpty(true);
+}
+
+if (initCloud()) bootCloud();
+else if (VIEW_ONLY) {                                                               // صفحة العرض بدون قاعدة بيانات
+  load(); state.mode = 'view';
+  state.source === 'none' ? renderEmpty() : render();
+}
+else {
+  load();
+  ss.set(EDITOR_KEY, '1'); state.mode = 'edit';                                     // صفحة التعبئة: تفتح على التعبئة مباشرة
+  render();
+  if (state.source === 'none') toast('أهلًا 🌸 ابدئي بكتابة بياناتك ثم اضغطي البطاقات لإضافة الشواهد');
+}
+})();
+</script></body></html>
